@@ -1,0 +1,48 @@
+{
+  "name": "LumHub",
+  "version": "4.0.3",
+  "description": "LumHub - Api - Account",
+  "main": "Sources/App.ts",
+  "scripts": {
+    "migrate": "node_modules/.bin/knex --knexfile ./databaseInit/knexfile.ts migrate:latest",
+    "migrate:rollback": "node_modules/.bin/knex --knexfile ./databaseInit/knexfile.ts migrate:rollback",
+    "migrate:rollback:all": "node_modules/.bin/knex --knexfile ./databaseInit/knexfile.ts migrate:rollback --all",
+    "seed": "node_modules/.bin/knex --knexfile ./databaseInit/knexfile.ts seed:run",
+    "build": "tsc --build && tsc-alias && cp Sources/displayConnected.ascii ./dist/displayConnected.ascii",
+    "build:watch": "tsc --build --watch | tsc-alias -w",
+    "start": "node dist/App.js",
+    "start:watch": "node --watch dist/App.js",
+    "test": "node_modules/.bin/jest -c jest.config.json --coverage",
+    "test:watch": "node_modules/.bin/jest --watch -c jest.config.json",
+    "lint": "eslint . --ext .ts",
+    "fix-lint": "eslint --fix . --ext .ts"
+  },
+  "keywords": [],
+  "author": "Ruby",
+  "license": "MIT",
+  "dependencies": {
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "helmet": "^5.0.2",
+    "knex": "^2.4.0",
+    "pg": "^8.8.0",
+    "tsc-alias": "^1.8.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^29.2.3",
+    "@types/node": "^18.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "8.15.0",
+    "jest": "^29.4.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}

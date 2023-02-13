@@ -1,0 +1,36 @@
+{
+  "displayName": "st",
+  "preset": "ts-jest",
+  "coverageDirectory": "./coverage",
+  "moduleNameMapper": {
+    "^@/Controllers/(.*)$": "<rootDir>/Sources/Controllers/$1",
+    "^@/Controllers$": "<rootDir>/Sources/Controllers",
+
+    "^@/UseCases/(.*)$": "<rootDir>/Sources/UseCases/$1",
+    "^@/UseCases": "<rootDir>/Sources/UseCases",
+
+    "^@/Database/(.*)$": "<rootDir>/Sources/Database/$1",
+    "^@/Database": "<rootDir>/Sources/Database",
+
+    "^@/Repositories/(.*)$": "<rootDir>/Sources/Repositories/$1",
+    "^@/Repositories": "<rootDir>/Sources/Repositories",
+
+    "^@/Services/(.*)$": "<rootDir>/Sources/Services/$1",
+    "^@/Services": "<rootDir>/Sources/Services",
+
+    "^@/Errors/(.*)$": "<rootDir>/Sources/Errors/$1",
+    "^@/Errors": "<rootDir>/Sources/Errors",
+
+    "^@/DTO/(.*)$": "<rootDir>/Sources/DTO/$1",
+    "^@/DTO": "<rootDir>/Sources/DTO"
+  },
+  "testMatch": [
+    "**/?(*.)+(spec).ts"
+  ],
+  "resetMocks": true,
+  "clearMocks": true,
+  "verbose": true,
+  "setupFiles": [
+    "dotenv/config"
+  ]
+}

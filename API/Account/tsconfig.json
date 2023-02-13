@@ -1,0 +1,51 @@
+{
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "bin/",
+    "databaseInit"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./Sources",
+    "paths": {
+      "@/Routes/*": ["Routes/*"],
+      "@/Controllers/*": ["Controllers/*"],
+      "@/Middlewares/*": ["Middlewares/*"],
+      "@/UseCases/*": ["UseCases/*"],
+      "@/Database/*": ["Database/*"],
+      "@/Repositories/*": ["Repositories/*"],
+      "@/Services/*": ["Services/*"],
+      "@/Errors/*": ["Errors/*"],
+      "@/DTO/*": ["DTO/*"],
+    },
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "target": "ESNext",
+    "outDir": "dist/",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+    "allowUmdGlobalAccess": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "lib": [
+    "esnext",
+    "dom"
+  ]
+}
