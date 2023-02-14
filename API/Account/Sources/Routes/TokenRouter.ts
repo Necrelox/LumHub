@@ -1,5 +1,6 @@
 import { TokenController } from '@/Controllers/index';
 import { AbstractRouter } from '@/Routes/AbstractRouter';
+import { tokenChecker } from '@/Middlewares/TokenChecker';
 
 export class TokenRouter extends AbstractRouter<TokenController> {
     constructor() {
@@ -7,6 +8,6 @@ export class TokenRouter extends AbstractRouter<TokenController> {
     }
 
     protected initRoutes(): void {
-        this.router.post('/checkToken');
+        this.router.get('/verify', tokenChecker, this.controller.verifyToken);
     }
 }

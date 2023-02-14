@@ -24,7 +24,7 @@ async function expirationDateChecker(token: string) {
 
 export async function tokenChecker(req: Request, res: Response, next: NextFunction): Promise<void> {
     try {
-        const token: string = req.headers.authorization?.split(' ')[1] || '';
+        const token: string = req.cookies.token;
         await Promise.all([
             signatureChecker(token),
             expirationDateChecker(token),

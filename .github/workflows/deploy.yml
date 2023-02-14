@@ -1,0 +1,24 @@
+name: deploys
+run-name: Tests and Deploy production
+on:
+  push:
+    branches:
+      - prod
+jobs:
+  basic-deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to production
+    steps:
+      - name: Deploy to production server and compose up
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd LumHub/
+            git pull
+            docker compose down
+            docker system prune -a -f
+            docker compose up -d --build

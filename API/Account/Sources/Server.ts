@@ -1,6 +1,7 @@
 import { AccountRouter, InformationRouter, AdminRouter, TokenRouter, StatusRouter } from '@/Routes/index';
 
 import express, { Application } from 'express';
+import cookieParser from 'cookie-parser';
 import { readFileSync } from 'fs';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -35,6 +36,7 @@ export class Server {
     private initMiddlewareExpress(): void {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
+        this.app.use(cookieParser());
     }
 
     private initMiddlewareHelmet(): void {
