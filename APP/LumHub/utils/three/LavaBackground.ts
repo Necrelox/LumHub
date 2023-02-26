@@ -11,9 +11,9 @@ import {
 } from 'three';
 
 // @ts-ignore
-import vertex from '@/utils/three/shaders/vertex.vert';
+import vertex from '@/utils/three/shaders/LavaBackground.vert';
 // @ts-ignore
-import fragment from '@/utils/three/shaders/fragment.frag';
+import fragment from '@/utils/three/shaders/LavaBackground.frag';
 
 import { AbstractScene } from '@/utils/three/AbstractScene';
 
@@ -42,17 +42,17 @@ export class LavaBackground extends AbstractScene {
   }
 
   private initScene (): void {
-    const geometry = new PlaneGeometry(2.05, 2.05, 32, 32);
+    const geometry = new PlaneGeometry(2.05, 2.05, 64, 64);
     const colors = [
       new Color('#090125'),
+      new Color('#260840'),
+      new Color('#090125'),
+      new Color('#090125'),
+      new Color('#260840'),
       new Color('#876813'),
-      new Color('#260840'),
-      new Color('#00756f'),
       new Color('#090125'),
       new Color('#090125'),
       new Color('#260840'),
-      new Color('#00756f'),
-      new Color('#090125'),
       new Color('#090125')
     ];
 
@@ -65,6 +65,7 @@ export class LavaBackground extends AbstractScene {
         time: { value: 0 },
         uColor: { value: colors }
       },
+      wireframe: false,
       vertexShader: vertex,
       fragmentShader: fragment
     });

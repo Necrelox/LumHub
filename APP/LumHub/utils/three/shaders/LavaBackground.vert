@@ -76,8 +76,8 @@ float snoise(vec3 v) {
     return 42.0 * dot(m * m, vec4(dot(p0, x0), dot(p1, x1), dot(p2, x2), dot(p3, x3)));
 }
 
-const vec2 NOISE_FREQ = vec2(2., 2.8) * .4;
-const float NOISE_FLOOR = 0.05;
+const vec2 NOISE_FREQ = vec2(2., 6.2) * .4;
+const float NOISE_FLOOR = 0.075;
 
 void main() {
     vec2 noiseCoord = uv*vec2(3.,4.);
