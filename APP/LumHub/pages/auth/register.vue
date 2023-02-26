@@ -1,5 +1,5 @@
 <template>
-  <BackgroundComponent style="width: 100%; height: 100%" />
+  <BackgroundComponent />
 </template>
 
 <script setup>

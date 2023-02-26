@@ -12,7 +12,7 @@ export default {
 
 <script setup>
 definePageMeta({
-  middleware: ['AuthChecker']
+  middleware: ['auth-register']
 });
 </script>
 
