@@ -134,7 +134,7 @@ services:
       - node-exporter
     depends_on:
       node-exporter:
-        condition:
+        condition: service_started
     labels:
       - "group=monitoring"
       - "security=high"
