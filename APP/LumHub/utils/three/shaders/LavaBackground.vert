@@ -89,7 +89,7 @@ void main() {
     vec3 pos = vec3(position.x,position.y,position.z + noise * 0.3 +tilt + incline + offset);
     vColor = uColor[9];
 
-    float noiseValues[4];
+    float noiseValues[9];
     for (int i = 6; i >= 0; --i) {
         noiseValues[i] = smoothstep(NOISE_FLOOR, 0.6 + float(i) * 0.07,
         snoise(vec3(noiseCoord.x * NOISE_FREQ.x + time * (5. + float(i) * 0.3), noiseCoord.y * NOISE_FREQ.y, time * (10. + float(i) * 0.3) + 1. + float(i) * 10.)));
