@@ -1,5 +1,5 @@
-name: deploys
-run-name: Tests and Deploy production
+name: Deploy to production
+run-name: Deploy production
 on:
   push:
     branches:

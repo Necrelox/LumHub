@@ -1,6 +1,14 @@
 import { Knex } from 'knex';
 
-const RolesPermissions = {
+interface IRolesPermissions {
+  roles: string[];
+  permissions: string[];
+  rolePermission: {
+    [key: string]: string[];
+  };
+}
+
+const RolesPermissions: IRolesPermissions = {
     roles: [
         'admin',
         'user'
