@@ -20,10 +20,11 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-16',
       title: 'LumHub',
+
       meta: [
         {
-          name: 'LumHub',
-          content: 'Welcome to LumHub'
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
         }
       ]
     }
