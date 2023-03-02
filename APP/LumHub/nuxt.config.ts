@@ -22,8 +22,8 @@ export default defineNuxtConfig({
       title: 'LumHub',
       meta: [
         {
-          name: 'description',
-          content: 'My amazing site.'
+          name: 'LumHub',
+          content: 'Welcome to LumHub'
         }
       ]
     }
