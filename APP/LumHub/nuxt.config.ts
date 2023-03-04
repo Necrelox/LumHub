@@ -18,13 +18,20 @@ export default defineNuxtConfig({
   ssr: true,
   app: {
     head: {
-      charset: 'utf-16',
+      charset: 'utf-8',
       title: 'LumHub',
-
       meta: [
         {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1'
+        },
+        {
+          name: 'title',
+          content: 'LumHub'
+        },
+        {
+          name: 'description',
+          content: 'Hub of many tools'
         }
       ]
     }
@@ -44,15 +51,35 @@ export default defineNuxtConfig({
       })]
   },
   pwa: {
-    registerType: 'autoUpdate',
-    mode: 'development',
-    client: {
-      installPrompt: true
-    },
     manifest: {
-      name: 'Nuxt Vite PWA',
-      short_name: 'NuxtVitePWA',
-      theme_color: '#ffffff'
+      name: 'LumHub',
+      short_name: 'LumHub',
+      description: 'Hub of many tools',
+      icons: [
+        {
+          src: 'icon/64x64.png',
+          sizes: '64x64',
+          type: 'image/png'
+        },
+        {
+          src: 'icon/144x144.png',
+          sizes: '144x144',
+          type: 'image/png'
+        },
+        {
+          src: 'icon/192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'icon/512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
+    },
+    workbox: {
+      navigateFallback: '/'
     },
     devOptions: {
       enabled: true,
