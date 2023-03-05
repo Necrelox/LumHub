@@ -13,9 +13,6 @@ export default defineNuxtConfig({
       autoprefixer: {}
     }
   },
-  sourcemap: true,
-  telemetry: false,
-  ssr: true,
   app: {
     head: {
       charset: 'utf-8',
@@ -59,22 +56,26 @@ export default defineNuxtConfig({
         {
           src: 'icon/64x64.png',
           sizes: '64x64',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'maskable'
         },
         {
           src: 'icon/144x144.png',
           sizes: '144x144',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'maskable'
         },
         {
           src: 'icon/192x192.png',
           sizes: '192x192',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'maskable'
         },
         {
           src: 'icon/512x512.png',
           sizes: '512x512',
-          type: 'image/png'
+          type: 'image/png',
+          purpose: 'maskable'
         }
       ]
     },

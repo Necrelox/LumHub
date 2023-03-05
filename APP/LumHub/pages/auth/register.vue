@@ -1,9 +1,3 @@
 <template>
-  <BackgroundComponent />
+  <RegisterFormComponent />
 </template>
-
-<script setup>
-</script>
-
-<style scoped>
-</style>

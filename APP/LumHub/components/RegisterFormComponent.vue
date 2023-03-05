@@ -1,18 +1,13 @@
 <template>
-  <div>
-    <h1>Index</h1>
+  <div class="modal">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'index'
+  name: 'RegisterFormComponent'
 };
 </script>
 
-<script setup>
-</script>
-
 <style scoped>
-
 </style>
