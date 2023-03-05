@@ -1,8 +1,6 @@
 <template>
-  <div>
-    <canvas id="lava-lamp" />
-    <div id="blur" />
-  </div>
+  <canvas id="lava-lamp" />
+  <div id="blur" />
 </template>
 
 <script setup lang="ts">
@@ -19,6 +17,13 @@ onMounted(() => {
 </script>
 
 <style>
+#lava-lamp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 #blur {
   position: absolute;
   top: 0;
@@ -26,6 +31,6 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   backdrop-filter: blur(90px);
-  z-index: 99;
+  z-index: 1;
 }
 </style>
