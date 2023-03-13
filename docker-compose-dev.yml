@@ -118,7 +118,7 @@ services:
     image: prom/prometheus:latest
     restart: unless-stopped
     volumes:
-      - ./docker/dev/monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./Docker/dev/monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -198,8 +198,8 @@ services:
     expose:
       - "3000"
     volumes:
-      - ./docker/dev/monitor/grafana/dashboards:/var/lib/grafana/dashboards
-      - ./docker/dev/monitor/grafana/provisioning:/etc/grafana/provisioning
+      - ./Docker/dev/monitor/grafana/dashboards:/var/lib/grafana/dashboards
+      - ./Docker/dev/monitor/grafana/provisioning:/etc/grafana/provisioning
     networks:
       - monitoring
       - nginx
@@ -219,9 +219,9 @@ networks:
 
 configs:
   nginx-http:
-    file: docker/dev/nginx/nginx-http.conf
+    file: Docker/dev/nginx/nginx-http.conf
   prometheus:
-    file: docker/dev/monitor/prometheus/prometheus.yml
+    file: Docker/dev/monitor/prometheus/prometheus.yml
 
 volumes:
   prometheus_data:

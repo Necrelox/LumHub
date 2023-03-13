@@ -73,8 +73,8 @@ services:
       - source: nginx-http
         target: /etc/nginx/conf.d/default.conf
     volumes:
-      - ./docker/prod/certbot/data/:/var/www/certbot/:ro
-      - ./docker/prod/certbot/conf/:/etc/nginx/ssl/:ro
+      - ./Docker/prod/certbot/data/:/var/www/certbot/:ro
+      - ./Docker/prod/certbot/conf/:/etc/nginx/ssl/:ro
     ports:
       - "80:80"
     networks:
@@ -88,8 +88,8 @@ services:
     container_name: Server-Certbot
     image: certbot/certbot
     volumes:
-      - ./docker/prod/certbot/data/:/var/www/certbot/:rw
-      - ./docker/prod/certbot/conf/:/etc/letsencrypt/:rw
+      - ./Docker/prod/certbot/data/:/var/www/certbot/:rw
+      - ./Docker/prod/certbot/conf/:/etc/letsencrypt/:rw
     command: certonly --reinstall --webroot --webroot-path=/var/www/certbot --email ${EMAIL} --agree-tos --no-eff-email -d ${DOMAIN}
     networks:
       - nginx
@@ -108,8 +108,8 @@ services:
       - source: nginx-https
         target: /etc/nginx/conf.d/default.conf
     volumes:
-      - ./docker/prod/certbot/data/:/var/www/certbot/:ro
-      - ./docker/prod/certbot/conf/:/etc/nginx/ssl/:ro
+      - ./Docker/prod/certbot/data/:/var/www/certbot/:ro
+      - ./Docker/prod/certbot/conf/:/etc/nginx/ssl/:ro
     ports:
       - "443:443"
     links:
@@ -156,7 +156,7 @@ services:
     image: prom/prometheus:latest
     restart: unless-stopped
     volumes:
-      - ./docker/prod/monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./Docker/prod/monitor/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
@@ -236,8 +236,8 @@ services:
     expose:
       - "3000"
     volumes:
-      - ./docker/prod/monitor/grafana/dashboards:/var/lib/grafana/dashboards
-      - ./docker/prod/monitor/grafana/provisioning:/etc/grafana/provisioning
+      - ./Docker/prod/monitor/grafana/dashboards:/var/lib/grafana/dashboards
+      - ./Docker/prod/monitor/grafana/provisioning:/etc/grafana/provisioning
     networks:
       - monitoring
       - nginx
@@ -257,11 +257,11 @@ networks:
 
 configs:
   nginx-http:
-    file: docker/prod/nginx/nginx-http.conf
+    file: Docker/prod/nginx/nginx-http.conf
   nginx-https:
-    file: docker/prod/nginx/nginx-https.conf
+    file: Docker/prod/nginx/nginx-https.conf
   prometheus:
-    file: docker/prod/monitor/prometheus/prometheus.yml
+    file: Docker/prod/monitor/prometheus/prometheus.yml
 
 volumes:
   prometheus_data:
