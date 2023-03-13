@@ -47,10 +47,10 @@ export class LavaBackground extends AbstractScene {
       new Color('#090125'),
       new Color('#260840'),
       new Color('#090125'),
-      new Color('#090125'),
-      new Color('#876813'),
       new Color('#260840'),
       new Color('#090125'),
+      new Color('#876813'),
+      new Color('#165732'),
       new Color('#090125'),
       new Color('#260840'),
       new Color('#090125')
